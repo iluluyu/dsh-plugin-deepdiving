@@ -43,6 +43,16 @@ Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-pl
 
 纯 CSS 实现，直接叠在官方已设置的 `background-clip: text` 上；每层渐变均为周期函数且每循环位移整数个 tile，无缝循环；选择器特异性高于 CSS module 哈希类且容忍构建哈希变化；颜色实时读取宿主官方 token；暗色主题与减少动态效果均已适配。
 
+### Reduced motion
+
+`prefers-reduced-motion: reduce` (Windows: Settings → Accessibility → Visual effects → Animation effects off; macOS: Reduce motion) holds the currents still by default — the same guard the stock dsh shimmer has. To keep the flow flowing regardless, opt in once per profile and reload:
+
+```js
+localStorage['dsh-deepdiving:flow'] = '1'   // F12 console on the dsh page
+```
+
+`0` or removing the key restores the accessible default.
+
 ### Tunables
 
 | Variable | Default | Meaning |
