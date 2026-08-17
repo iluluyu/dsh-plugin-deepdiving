@@ -1,0 +1,6 @@
+# dsh-plugin-deepdiving — one loader row over the shipped Web composition:
+# the node half is a no-op; the browser half (dsh.client row) injects the
+# water-flow stylesheet over the turn-status text.
+- insert:
+    - id: deepdiving
+      name: 'dsh-plugin-deepdiving'
