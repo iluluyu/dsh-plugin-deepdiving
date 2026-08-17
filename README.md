@@ -55,7 +55,7 @@ Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-pl
 
 The card follows the official plugin-card chrome (same tokens, fold-out layout, bilingual zh/en copy tracking the app locale) and holds two fields:
 
-- **Flow speed 流动速度** — `Constant (6s)` or `Follow generation speed`: in follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur` (12s still water → 2.5s rapids), so the water literally races while tokens pour in.
+- **Flow speed 流动速度** — `Constant (6s)` or `Follow generation speed` (official Menu dropdown, theme-aware): in follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur` (12s still water → 2.5s rapids), so the water literally races while tokens pour in.
 - **Flow under reduced motion** — the force-flow toggle, default ON; applies live (no reload).
 
 Both persist per browser via localStorage — consistent with reduced-motion itself being a per-browser signal. (A host-side settings namespace was prototyped, but dsh's api-proxy serves namespaces to the web client from a hard-coded allowlist, so third-party sections cannot cross that boundary yet; the client-side storage is the pragmatic home until that opens.)
