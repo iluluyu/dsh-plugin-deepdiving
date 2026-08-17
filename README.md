@@ -43,15 +43,22 @@ Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-pl
 
 纯 CSS 实现，直接叠在官方已设置的 `background-clip: text` 上；每层渐变均为周期函数且每循环位移整数个 tile，无缝循环；选择器特异性高于 CSS module 哈希类且容忍构建哈希变化；颜色实时读取宿主官方 token；暗色主题与减少动态效果均已适配。
 
-### Reduced motion
+### Reduced motion & the force-flow setting
 
-`prefers-reduced-motion: reduce` (Windows: Settings → Accessibility → Visual effects → Animation effects off; macOS: Reduce motion) holds the currents still by default — the same guard the stock dsh shimmer has. To keep the flow flowing regardless, opt in once per profile and reload:
+`prefers-reduced-motion: reduce` (Windows: Settings → Accessibility → Visual effects → Animation effects off; macOS: Reduce motion) would hold the currents still — the same guard the stock dsh shimmer has. Since most reduced-motion users still want this gentle effect, **force-flow is ON by default**: the flow animates regardless, and anyone who needs true stillness (e.g. vestibular sensitivity) flips it off once in
 
-```js
-localStorage['dsh-deepdiving:flow'] = '1'   // F12 console on the dsh page
-```
+**Settings → Plugins → Plugin configuration → Deep diving water flow**
 
-`0` or removing the key restores the accessible default.
+| Light | Dark |
+|:---:|:---:|
+| ![light](docs/img/settings-card-light.png) | ![dark](docs/img/settings-card.png) |
+
+The card follows the official plugin-card chrome (same tokens, fold-out layout, bilingual zh/en copy tracking the app locale) and holds two fields:
+
+- **Flow speed 流动速度** — `Constant (6s)` or `Follow generation speed`: in follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur` (12s still water → 2.5s rapids), so the water literally races while tokens pour in.
+- **Flow under reduced motion** — the force-flow toggle, default ON; applies live (no reload).
+
+Both persist per browser via localStorage — consistent with reduced-motion itself being a per-browser signal. (A host-side settings namespace was prototyped, but dsh's api-proxy serves namespaces to the web client from a hard-coded allowlist, so third-party sections cannot cross that boundary yet; the client-side storage is the pragmatic home until that opens.)
 
 ### Tunables
 
