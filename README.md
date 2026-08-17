@@ -26,6 +26,8 @@ Light / dark themes:
 |:---:|:---:|
 | ![light](docs/img/demo-light.png) | ![dark](docs/img/demo-dark.png) |
 
+Verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
+
 ## Install
 
 ```sh
