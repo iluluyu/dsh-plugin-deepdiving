@@ -16,9 +16,9 @@ The stock effect is a single pale band sweeping a flat-blue text every 1.8s — 
 |:---:|:---:|
 | single band, mostly flat | three parallax currents, never stops |
 
-Real-time 6s loop, left stock / right deepdiving (from the [standalone demo](docs/demo.html)):
+Close-up GIF — the water-flow on "Deep diving…", one complete 6s cycle compressed to 2.4s (full stock-vs-flow comparison in the [standalone demo](docs/demo.html)):
 
-<video src="docs/img/demo.mp4" autoplay loop muted playsinline></video>
+![water-flow close-up](docs/img/demo.gif)
 
 Light / dark themes:
 
