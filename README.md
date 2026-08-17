@@ -16,15 +16,9 @@ The stock effect is a single pale band sweeping a flat-blue text every 1.8s — 
 |:---:|:---:|
 | single band, mostly flat | three parallax currents, never stops |
 
-Close-up GIF — the water-flow on "Deep diving…", one complete 6s cycle compressed to 2.4s (full stock-vs-flow comparison in the [standalone demo](docs/demo.html)):
+Close-up GIF — the water-flow on "Deep diving…", one complete 6s cycle compressed to 2.4s. Transparent background, so it reads correctly on both light and dark GitHub themes (1-bit GIF alpha: glyph edges are Bayer-dithered, the 25%-opacity glow is intentionally dropped). Full stock-vs-flow comparison with a live theme toggle in the [standalone demo](docs/demo.html):
 
 ![water-flow close-up](docs/img/demo.gif)
-
-Light / dark themes:
-
-| Light | Dark |
-|:---:|:---:|
-| ![light](docs/img/demo-light.png) | ![dark](docs/img/demo-dark.png) |
 
 Verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
 
@@ -62,7 +56,7 @@ Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-pl
 
 ## Demo
 
-Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone comparison page (light/dark, stock vs flow), no dsh required.
+Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone comparison page (light/dark, stock vs flow), no dsh required. `?strip=36&bg=white|black` renders phase-frozen filmstrips; [`docs/make-gif.py`](docs/make-gif.py) mates the two backdrops into the transparent GIF (two-background alpha recovery, since GIF alpha is 1-bit).
 
 浏览器直接打开 [`docs/demo.html`](docs/demo.html) 即可查看对比演示（明暗主题 × 原版/流动），无需运行 dsh。
 
