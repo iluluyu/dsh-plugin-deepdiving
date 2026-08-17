@@ -35,7 +35,7 @@ Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-pl
 
 ## Speed alignment
 
-Measured from chat.deepseek.com's production stylesheet, the official thinking shimmer is `2s ease-out infinite` — one 70%-white band sweeping two text widths (`translate(-100%)→(100%)`, 10% tail pause), with a perceived mid-sweep pace of ~1.5 text widths/s. This plugin's constant default is **4s**, at which the mid layer moves at exactly 1.50w/s — the official cadence — while the sparkle layer reads as surface ripples and the bed layer as slower depth. Follow mode's ceiling is also 4s, so the water never outruns the official cadence; its floor is 12s still water.
+Measured from chat.deepseek.com's production stylesheet, the official thinking shimmer is `2s ease-out infinite` — one 70%-white band sweeping two text widths (`translate(-100%)→(100%)`, 10% tail pause), with a perceived mid-sweep pace of ~1.5 text widths/s. This plugin's constant default is **4s**, at which the mid layer moves at exactly 1.50w/s — the official cadence — while the sparkle layer reads as surface ripples and the bed layer as slower depth. Follow mode anchors ~50 tok/s (the typical API turn) onto that same 4s cadence and climbs a log curve to a 2s rapids ceiling at ~250 tok/s — Cerebras-class serving reads at twice the official pace, never beyond.
 
 ## Performance
 
@@ -63,7 +63,7 @@ Pure CSS: zero JS per frame, zero layout. Measured via CDP `Performance.getMetri
 
 The card follows the official plugin-card chrome (same tokens, fold-out layout, bilingual zh/en copy tracking the app locale) and holds two fields:
 
-- **Flow speed 流动速度** — `Constant (6s)` or `Follow generation speed` (official Menu dropdown, theme-aware): in follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur` (12s still water → 2.5s rapids), so the water literally races while tokens pour in.
+- **Flow speed 流动速度** — `Constant (4s)` or `Follow generation speed` (official Menu dropdown, theme-aware): in follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur`. Calibrated to measured throughputs: **~50 tok/s (the typical API turn — Zhipu GLM, DeepSeek) lands exactly on the official shimmer cadence (4s)**; faster providers climb a log curve to a 2s rapids ceiling at ~250 tok/s (Cerebras-class serving, 2× the official pace); still water is 12s.
 - **Flow under reduced motion** — the force-flow toggle, default ON; applies live (no reload).
 
 Both persist per browser via localStorage — consistent with reduced-motion itself being a per-browser signal. (A host-side settings namespace was prototyped, but dsh's api-proxy serves namespaces to the web client from a hard-coded allowlist, so third-party sections cannot cross that boundary yet; the client-side storage is the pragmatic home until that opens.)
