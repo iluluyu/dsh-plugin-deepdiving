@@ -20,7 +20,7 @@ Close-up — the water-flow on "Deep diving…", one complete 6s cycle compresse
 
 ![water-flow close-up](docs/img/demo.png)
 
-Since 0.4.0 the card rides the official plugin-settings path (dsh `0.1.0-rc.7`, [cookbook](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/cookbook/adding-a-settings-card.md)): the host half registers the `deepdiving` settings namespace, the browser half claims its keyed slot, and the tab pairs the two halves automatically. Animation verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 动画已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
+Since 0.0.1 the card rides the official plugin-settings path (dsh `0.1.0-rc.7`, [cookbook](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/cookbook/adding-a-settings-card.md)): the host half registers the `deepdiving` settings namespace, the browser half claims its keyed slot, and the tab pairs the two halves automatically. Animation verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 动画已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
 
 ## Install
 
@@ -91,7 +91,7 @@ Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone c
 
 Zero-build: `lib/client.js` is hand-maintained source AND the shipped artifact, in the `window.__ModuleLoader__` handoff format (see the [outline plugin](https://github.com/iluluyu/dsh-ui-outline) for the same skeleton). `npm run check` syntax-checks; `npm publish` ships.
 
-Settings: the official plugin-settings path — host-side `deepdiving` namespace + keyed `settings.plugin.item` card + `settingsScope` revision-fenced reads/writes (shipped in 0.4.0; the plan and research live in [docs/MIGRATION-settings-card.md](docs/MIGRATION-settings-card.md)).
+Settings: the official plugin-settings path — host-side `deepdiving` namespace + keyed `settings.plugin.item` card + `settingsScope` revision-fenced reads/writes (shipped in 0.0.1; the plan and research live in [docs/MIGRATION-settings-card.md](docs/MIGRATION-settings-card.md)).
 
 ```sh
 git clone https://github.com/iluluyu/dsh-ui-deepdiving

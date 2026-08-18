@@ -1,6 +1,6 @@
 # Settings card migration: back into the "插件配置" list
 
-> **EXECUTED in 0.4.0** (2026-08-18). Researched against dsh `0.1.0-rc.7`, then implemented per
+> **EXECUTED** (2026-08-18; shipped as 0.0.1 after the version-numbering reset — the 0.3.x/0.4.x lineage below was unpublished; its labels are historical). Researched against dsh `0.1.0-rc.7`, then implemented per
 > the official cookbook `docs/cookbook/adding-a-settings-card.md` (which landed upstream after this
 > research note was written). What shipped:
 >
