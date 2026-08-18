@@ -20,7 +20,7 @@ Close-up — the water-flow on "Deep diving…", one complete 6s cycle compresse
 
 ![water-flow close-up](docs/img/demo.png)
 
-Verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
+Settings card registers as its own tab under `settings.plugins.tab` (dsh `0.1.0-rc.7`; on rc.6 and earlier it rode the `settings.plugin.item` list slot). Animation verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 动画已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
 
 ## Install
 
