@@ -91,6 +91,8 @@ Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone c
 
 Zero-build: `lib/client.js` is hand-maintained source AND the shipped artifact, in the `window.__ModuleLoader__` handoff format (see the [outline plugin](https://github.com/iluluyu/dsh-ui-outline) for the same skeleton). `npm run check` syntax-checks; `npm publish` ships.
 
+Planned: move the settings card back into the shared configurable list via a host-side settings namespace (verified reachable on rc.7) — see [docs/MIGRATION-settings-card.md](docs/MIGRATION-settings-card.md).
+
 ```sh
 git clone https://github.com/iluluyu/dsh-ui-deepdiving
 npm run check
