@@ -1,5 +1,5 @@
 {
-	"name": "dsh-plugin-deepdiving",
+	"name": "dsh-ui-deepdiving",
 	"version": "0.3.2",
 	"description": "Continuous water-flow light for the dsh web 'Deep diving...' turn status: three parallax gradient currents sweep the text like flowing water, replacing the stock single-band shimmer. Light/dark themes and reduced-motion respected.",
 	"type": "module",
@@ -21,7 +21,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/iluluyu/dsh-plugin-deepdiving.git"
+		"url": "git+https://github.com/iluluyu/dsh-ui-deepdiving.git"
 	},
 	"dsh": {
 		"bundle": {

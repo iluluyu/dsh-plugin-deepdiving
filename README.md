@@ -1,4 +1,4 @@
-# dsh-plugin-deepdiving
+# dsh-ui-deepdiving
 
 Continuous water-flow light for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) web "Deep diving…" turn status.
 
@@ -25,13 +25,13 @@ Verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM t
 ## Install
 
 ```sh
-dsh plugin --profile web add dsh-plugin-deepdiving
-# or: dsh plugin --profile web add github:iluluyu/dsh-plugin-deepdiving
+dsh plugin --profile web add dsh-ui-deepdiving
+# or: dsh plugin --profile web add github:iluluyu/dsh-ui-deepdiving
 ```
 
-Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-plugin-deepdiving`.
+Restart `dsh web` and reload. Uninstall: `dsh plugin --profile web remove dsh-ui-deepdiving`.
 
-重启 `dsh web` 并刷新浏览器即可。卸载：`dsh plugin --profile web remove dsh-plugin-deepdiving`。
+重启 `dsh web` 并刷新浏览器即可。卸载：`dsh plugin --profile web remove dsh-ui-deepdiving`。
 
 ## Speed alignment
 
@@ -89,10 +89,10 @@ Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone c
 
 ## Development
 
-Zero-build: `lib/client.js` is hand-maintained source AND the shipped artifact, in the `window.__ModuleLoader__` handoff format (see the [outline plugin](https://github.com/iluluyu/dsh-plugin-outline) for the same skeleton). `npm run check` syntax-checks; `npm publish` ships.
+Zero-build: `lib/client.js` is hand-maintained source AND the shipped artifact, in the `window.__ModuleLoader__` handoff format (see the [outline plugin](https://github.com/iluluyu/dsh-ui-outline) for the same skeleton). `npm run check` syntax-checks; `npm publish` ships.
 
 ```sh
-git clone https://github.com/iluluyu/dsh-plugin-deepdiving
+git clone https://github.com/iluluyu/dsh-ui-deepdiving
 npm run check
 ```
 
