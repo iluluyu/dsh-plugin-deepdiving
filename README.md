@@ -20,7 +20,7 @@ Close-up — the water-flow on "Deep diving…", one complete 6s cycle compresse
 
 ![water-flow close-up](docs/img/demo.png)
 
-Settings card registers as its own tab under `settings.plugins.tab` (dsh `0.1.0-rc.7`; on rc.6 and earlier it rode the `settings.plugin.item` list slot). Animation verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 动画已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
+Since 0.4.0 the card rides the official plugin-settings path (dsh `0.1.0-rc.7`, [cookbook](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/cookbook/adding-a-settings-card.md)): the host half registers the `deepdiving` settings namespace, the browser half claims its keyed slot, and the tab pairs the two halves automatically. Animation verified live on dsh `0.1.0-rc.6` (stock hashed class `Md3f7G_turnStatus`, GLM turn running): the plugin's animation, layers, and dark-theme brightening all resolve on the real element. 动画已在 dsh `0.1.0-rc.6` 真实会话中验证（原版哈希类名、GLM 思考中）：动画、分层、暗色提亮均在真实元素上生效。
 
 ## Install
 
@@ -68,7 +68,7 @@ The card follows the official plugin-card chrome (same tokens, fold-out layout, 
 - In follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur`. Calibrated to measured throughputs: **~50 tok/s (the typical API turn — Zhipu GLM, DeepSeek) lands exactly on the official cadence at 1×**; faster providers climb a log curve to a rapids ceiling at ~250 tok/s (Cerebras-class serving); still water is 12s. 
 - **Flow under reduced motion** — the force-flow toggle, default ON; applies live (no reload).
 
-Both persist per browser via localStorage — consistent with reduced-motion itself being a per-browser signal. (A host-side settings namespace was prototyped, but dsh's api-proxy serves namespaces to the web client from a hard-coded allowlist, so third-party sections cannot cross that boundary yet; the client-side storage is the pragmatic home until that opens.)
+Preferences persist in the host's settings document (`settings.yaml`) through the official plugin-settings mechanism — the host half registers the `deepdiving` namespace (schemastery schema), and every card write is a revision-fenced `settings.mutate` over the wire, so they follow the user across browsers and machines. The card shows a `Customized 已自定义` badge once any field overrides the defaults, with a `Reset to defaults 恢复默认` action; pre-0.4 localStorage values migrate automatically on first load. (rc.6 and earlier: the api-proxy allowlist kept third-party namespaces off the wire, so those versions stay on localStorage — the readers remain as a fallback.)
 
 ### Tunables
 
@@ -91,7 +91,7 @@ Open [`docs/demo.html`](docs/demo.html) directly in a browser — a standalone c
 
 Zero-build: `lib/client.js` is hand-maintained source AND the shipped artifact, in the `window.__ModuleLoader__` handoff format (see the [outline plugin](https://github.com/iluluyu/dsh-ui-outline) for the same skeleton). `npm run check` syntax-checks; `npm publish` ships.
 
-Planned: move the settings card back into the shared configurable list via a host-side settings namespace (verified reachable on rc.7) — see [docs/MIGRATION-settings-card.md](docs/MIGRATION-settings-card.md).
+Settings: the official plugin-settings path — host-side `deepdiving` namespace + keyed `settings.plugin.item` card + `settingsScope` revision-fenced reads/writes (shipped in 0.4.0; the plan and research live in [docs/MIGRATION-settings-card.md](docs/MIGRATION-settings-card.md)).
 
 ```sh
 git clone https://github.com/iluluyu/dsh-ui-deepdiving

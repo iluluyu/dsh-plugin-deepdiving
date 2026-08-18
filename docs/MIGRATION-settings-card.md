@@ -1,3 +1,24 @@
+# Settings card migration: back into the "插件配置" list
+
+> **EXECUTED in 0.4.0** (2026-08-18). Researched against dsh `0.1.0-rc.7`, then implemented per
+> the official cookbook `docs/cookbook/adding-a-settings-card.md` (which landed upstream after this
+> research note was written). What shipped:
+>
+> - `lib/index.js` — host half registers the `deepdiving` namespace: `z.object({ speedMode:
+>   union[constant|follow].default(constant), mult: number 0.5–3 step 0.5 default 1, forceFlow:
+>   boolean default true })` via `@deepseek-ai/schemastery` (the only runtime dep added).
+> - `lib/client.js` — card claims the keyed `settings.plugin.item` slot (`key: "deepdiving"`)
+>   through `ctx.slots.inject`; reads/writes ride `ctx.settingsScope.bind({ namespace })` with
+>   revision fencing and `settings/document-updated` invalidation. `inject` grew to
+>   `['slots','locale','connection','remote','settingsScope']`.
+> - One-shot localStorage → settings.yaml migration on first ready snapshot (a settings document
+>   that already has an opinion wins); legacy keys remain a read-only fallback.
+> - Card additions: `Customized` badge on user-layer overrides + `Reset to defaults` (unset all).
+>
+> The original research note follows, kept for the source-chain references.
+
+---
+
 # Settings card migration plan: back into the "插件配置" list (for a future release)
 
 > Researched 2026-08-18 against dsh `0.1.0-rc.7` sources (~/dsh @ 99f6f02, tag dsh-v0.1.0-rc.7).

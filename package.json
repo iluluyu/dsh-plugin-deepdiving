@@ -1,6 +1,6 @@
 {
 	"name": "dsh-ui-deepdiving",
-	"version": "0.3.3",
+	"version": "0.4.0",
 	"description": "Continuous water-flow light for the dsh web 'Deep diving...' turn status: three parallax gradient currents sweep the text like flowing water, replacing the stock single-band shimmer. Light/dark themes and reduced-motion respected.",
 	"type": "module",
 	"main": "lib/index.js",
@@ -47,5 +47,8 @@
 		"water-flow",
 		"shimmer"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"@deepseek-ai/schemastery": "^3.18.1"
+	}
 }
