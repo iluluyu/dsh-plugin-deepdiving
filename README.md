@@ -63,7 +63,7 @@ Pure CSS: zero JS per frame, zero layout. Measured via CDP `Performance.getMetri
 
 The card follows the official plugin-card chrome (same tokens, fold-out layout, bilingual zh/en copy tracking the app locale) and holds two fields:
 
-- **Flow speed 流动速度** — `Constant` or `Follow generation speed` (official Menu dropdown, theme-aware).
+- **Flow speed 流动速度** — `Constant` or `Follow generation speed` (official Menu dropdown, theme-aware). Defaults to **follow**: the water breathes with the turn itself.
 - **Speed 速度倍速** — a segmented scale of official Pill chips (3× · 2.5× · 2× · 1.5× · 1× · 0.5×, edge to edge across the field), shown in constant mode only — in follow mode the pace belongs to the token stream. **1× is the official shimmer cadence**; 3× triples it (1.3s), 0.5× halves it (8s). Defaults to 1×.
 - In follow mode a MutationObserver over the conversation flow maps the streamed character pace onto `--dv-dur`. Calibrated to measured throughputs: **~50 tok/s (the typical API turn — Zhipu GLM, DeepSeek) lands exactly on the official cadence at 1×**; faster providers climb a log curve to a rapids ceiling at ~250 tok/s (Cerebras-class serving); still water is 12s. 
 - **Flow under reduced motion** — the force-flow toggle, default ON; applies live (no reload).
